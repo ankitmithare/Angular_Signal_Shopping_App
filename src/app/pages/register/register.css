@@ -1,0 +1,121 @@
+
+/* Full screen center */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;     /* vertical */
+  justify-content: center; /* horizontal */
+  background-color: #f8fafc; /* light background */
+}
+
+/* Container */
+.login-card {
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Title */
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #0f172a; /* slate-900 */
+  margin-bottom: 2rem;
+}
+
+/* Form spacing */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Label */
+.login-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155; /* slate-700 */
+  margin-bottom: 0.5rem;
+}
+
+/* Input */
+.login-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5f5; /* slate-300 */
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-input::placeholder {
+  color: #9ca3af; /* gray-400 */
+}
+
+.login-input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #0f172a; /* slate-900 */
+}
+
+/* Button (if not using appButton styles) */
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #0f172a; /* slate-900 */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #1e293b; /* slate-800 */
+}
+
+/* Helper text under button */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-slate-500 {
+  color: #6b7280;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center; /* horizontal center */
+  background-color: #f8fafc;
+}

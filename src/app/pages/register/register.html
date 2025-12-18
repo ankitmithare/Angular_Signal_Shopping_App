@@ -1,0 +1,40 @@
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <h1 class="login-title">Register</h1>
+
+    <form class="login-form" (ngSubmit)="onSubmit()">
+      <div>
+        <label class="login-label">Username</label>
+        <input class="login-input" type="text" placeholder="Enter your username" />
+      </div>
+
+      <div>
+        <label class="login-label">Email</label>
+        <input class="login-input" type="email" placeholder="Enter your email" />
+      </div>
+
+      <div>
+        <label class="login-label">Password</label>
+        <input class="login-input" type="password" placeholder="Enter your password" />
+      </div>
+
+      <div>
+        <label class="login-label">Confirm Password</label>
+        <input class="login-input" type="password" placeholder="Enter your password" />
+      </div>
+
+      <button appButton type="submit">Register</button>
+
+      <p class="text-sm text-center text-slate-500 mt-4">
+        Already have an account?
+        <a routerLink="/login" class="text-slate-500 font-medium underline">
+          Login
+        </a>
+      </p>
+    </form>
+  </div>
+</div>
+
+
+
