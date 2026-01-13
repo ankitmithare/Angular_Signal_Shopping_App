@@ -42,7 +42,7 @@ import { Product } from "./types/product-type";
         <!-- No products -->
         @if (products()?.length === 0 && !loading()) {
           <div class="flex items-center justify-center h-40">
-            <p class="text-slate-500">No products available.</p>
+            <p class="text-slate-500">No products available..</p>
           </div>
         }
 
