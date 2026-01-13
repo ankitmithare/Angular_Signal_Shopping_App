@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { Currency, LucideAngularModule, Star } from 'lucide-angular';
-import { Product, Rating } from '../../pages/products/types/product-type';
+import { Product } from '../../pages/products/types/product-type';
 import { ButtonComponent } from '../../shared/components/button';
 import { CurrencyPipe } from '@angular/common';
 
@@ -70,6 +70,5 @@ import { CurrencyPipe } from '@angular/common';
 export class ProductCard {
   readonly icons = { Star };
   readonly product = input.required<Product>();
-  readonly rating = input.required<Rating>();
   readonly addToCart = output<Product>();
 }
