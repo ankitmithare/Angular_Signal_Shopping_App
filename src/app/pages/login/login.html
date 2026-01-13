@@ -2,18 +2,26 @@
   <div class="login-card">
     <h1 class="login-title">Sign In</h1>
 
-    <form class="login-form">
+    <form class="login-form" ngsubmit (submit)="onSubmit($event)">
       <div>
         <label class="login-label">Username</label>
-        <input class="login-input" type="text" id="username" autocomplete="username" placeholder="Enter your Name"/>
+        <input class="login-input" type="text" id="username" 
+        autocomplete="username" placeholder="Enter your Name"
+        [field]="loginForm.username"/>
+        <app-form-error [control]="loginForm.username()"></app-form-error>
       </div>
 
       <div>
         <label class="login-label">Password</label>
-        <input class="login-input" type="password" id="password" autocomplete="current-password" placeholder="Enter your Password"/>
+        <input class="login-input" type="password" id="password" 
+        autocomplete="current-password" placeholder="Enter your Password"
+        [field]="loginForm.password" />
+        <app-form-error [control]="loginForm.password()"></app-form-error>
       </div>
 
-      <button appButton type="submit">Sign In</button>
+      <button appButton type="submit" [disabled]="loginForm().invalid() || isLoading()">
+        {{ isLoading() ? 'Signing In...' : 'Sign In' }}
+      </button>
       <p class="text-sm text-center text-slate-500 mt-4">
         Don't have an account?
         <a routerLink="/register" class="text-slate-500 font-medium underline"> Register </a>

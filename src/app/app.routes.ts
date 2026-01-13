@@ -1,6 +1,20 @@
 import { Routes } from '@angular/router';
+import { provideState } from '@ngrx/store';
+import { productFeature } from './pages/products/store/product-feature';
+import { provideEffects } from '@ngrx/effects';
+import * as productEffect  from './pages/products/store/product-effect';
+import { profileFeature } from './pages/profile/store/profile-feature';
+import * as profileEffect from './pages/profile/store/profile-effect';
+import { cartFeature }  from  './pages/cart/store/cart-features';
+import * as cartEffect from './pages/cart/store/cart-effect';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'products'
+    },
     {
         path: 'login',
         loadComponent: () => import('./pages/login/login').then(m => m.Login)
@@ -12,10 +26,13 @@ export const routes: Routes = [
     {
         path: '',
         loadComponent: () => import('./pages/main-layout').then(m => m.MainLayout),
+        canActivate: [authGuard],
+        providers:[provideState(cartFeature), provideEffects(cartEffect)],
         children: [
             {
                 path: 'products',
-                loadComponent: () => import('./pages/products/product').then(m => m.Products)
+                loadComponent: () => import('./pages/products/product').then(m => m.Products),
+                providers: [provideState(productFeature), provideEffects(productEffect)],
             },
             {
                 path: 'cart',
@@ -23,7 +40,8 @@ export const routes: Routes = [
             },
             {
                 path: 'profile',
-                loadComponent: () => import('./pages/profile/profile').then(m => m.Profile)
+                loadComponent: () => import('./pages/profile/profile').then(m => m.Profile),
+                providers:[provideState(profileFeature), provideEffects(profileEffect)],
             }
         ]
     },
