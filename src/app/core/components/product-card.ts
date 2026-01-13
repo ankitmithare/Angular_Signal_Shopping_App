@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { Currency, LucideAngularModule, Star } from 'lucide-angular';
-import { Product } from '../../pages/products/types/product-type';
+import { Product, Rating } from '../../pages/products/types/product-type';
 import { ButtonComponent } from '../../shared/components/button';
 import { CurrencyPipe } from '@angular/common';
 
@@ -35,7 +35,7 @@ import { CurrencyPipe } from '@angular/common';
           <div class="flex items-center gap-1 text-amber-500">
             <lucide-icon [img]="icons.Star" class="size-4 fill-current" />
             <span class="text-sm font-medium text-slate-700">
-              {{ product().rating }}
+              {{ product().rating.rate }}
             </span>
           </div>
           <span class="text-xs text-slate-500">
@@ -70,5 +70,6 @@ import { CurrencyPipe } from '@angular/common';
 export class ProductCard {
   readonly icons = { Star };
   readonly product = input.required<Product>();
+  readonly rating = input.required<Rating>();
   readonly addToCart = output<Product>();
 }
