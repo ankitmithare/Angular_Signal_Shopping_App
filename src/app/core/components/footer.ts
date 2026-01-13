@@ -83,11 +83,9 @@ import { Github, LucideAngularModule, Twitter } from "lucide-angular";
     </nav>
 
     <!-- Copyright -->
-    <p
-      class="text-center lg:text-left
+    <p class="text-center lg:text-left
              text-xs sm:text-sm font-medium
-             order-2 lg:order-1"
-    >
+             order-2 lg:order-1">
       &copy; 2026 FakeStore. All rights reserved.
     </p>
 
