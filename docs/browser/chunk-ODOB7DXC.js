@@ -1,0 +1,1 @@
+import{Vb as r,Wb as s,Xb as e}from"./chunk-V37LJECA.js";var o=s({source:"Auth",events:{login:r(),loginSuccess:r(),loginFailure:r(),register:r(),registerSuccess:e(),registerFailure:r(),logout:e(),logoutsuccess:e()}});export{o as a};
